@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcits.dao.OfficeSourceMapper" >
+<!--    <select id="selectTool" resultType="com.dcits.entity.ShareTool">-->
+<!--        SELECT * FROM share_tool-->
+<!--    </select>-->
+    <insert id="insertPathForUpload_ShareTool" parameterType="com.dcits.entity.ShareTool">
+        insert into share_tool(
+            `name`,`describe`,`uploadTime`,`author`,`downloads`,`likes`,`url`
+        )
+        VALUES (
+            #{name},#{describe},#{uploadTime},#{author},#{downloads},#{likes},#{url}
+        )
+    </insert>
+    <insert id="insertPathForUpload_WordTemplate" parameterType="com.dcits.entity.WordTemplate">
+        insert into word_template(
+            `name`,`url`
+        )
+        VALUES (
+            #{name},#{url}
+        )
+    </insert>
+    <insert id="insertPathForUpload_PPTemplate" parameterType="com.dcits.entity.PPTemplate">
+        insert into ppt_template(
+            `name`,`url`
+        )
+        VALUES (
+            #{name},#{url}
+        )
+    </insert>
+
+
+    <delete id="deleteShareToolById" parameterType="com.dcits.entity.ShareTool">
+        delete from share_tool where id=#{id}
+    </delete>
+    <delete id="deletePPTemplateById" parameterType="com.dcits.entity.ShareTool">
+        delete from ppt_template where id=#{id}
+    </delete>
+    <delete id="deleteWordTemplateById" parameterType="com.dcits.entity.ShareTool">
+        delete from word_template where id=#{id}
+    </delete>
+
+</mapper>
