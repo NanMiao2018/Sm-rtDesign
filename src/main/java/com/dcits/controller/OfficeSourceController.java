@@ -27,7 +27,6 @@ public class OfficeSourceController {
     private final static Logger logger = LoggerFactory.getLogger(OfficeSourceController.class);
     @Resource
     private OfficeSourceService officeSourceService;
-
     /***
      * 查询工具列表
      * @param
